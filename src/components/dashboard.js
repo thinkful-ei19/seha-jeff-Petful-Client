@@ -13,8 +13,8 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                <Pet breed='cat'/>
-                <Pet breed='dog'/>
+                <Pet breed={this.state.adoptPet} adoptPet={()=> this.adoptCat }/>
+                {/* <Pet breed={this.state.adoptDog} adoptPet={() => this.dispatch.adoptPet} /> */}
             </div>
         );
     }

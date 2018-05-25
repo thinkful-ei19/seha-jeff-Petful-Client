@@ -4,7 +4,7 @@ import {adoptCat} from './../actions/cat';
 import { adoptDog } from './../actions/dog'
 
 
-export default function Pet (props) {
+function Pet (props) {
    
     return (
         <div>
@@ -24,14 +24,17 @@ export default function Pet (props) {
                     <dt>Story</dt>
                     <dd>{props.pet.story}</dd>
                 </dl>
-                    <button className="adoptCat" onClick={() => props.dispatch(adoptCat(props.breed))}>
-                        Adopt {props.animal.name}
-                    </button>
-                    <button className="adoptDog" onClick={() => props.dispatch(adoptDog(props.breed))}>
-                        Adopt {props.animal.name}
+                    <button className="adoptPet" onClick={() => props.adoptPet}>
+                        Adopt {props.pet.name}
                     </button>
             </main>
             </section>
         </div>
     )
 }
+const mapsStateToProps= (state) => ({
+    cat: state.cat,
+    dog: state.dog
+})
+
+export default connect (mapsStateToProps) (Pet) 

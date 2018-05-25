@@ -1,36 +1,33 @@
-
 import { API_BASE_URL } from '../config';
+
+
 export const FETCH_CAT_REQUEST = 'FETCH_CAT_REQUEST';
-export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
-export const FETCH_CAT_ERROR = 'FETCH_CAT_ERROR';
-export const ADOPT_CAT_REQUEST = 'ADOPT_CAT_REQUEST';
-export const ADOPT_CAT_SUCCESS = 'ADOPT_CAT_SUCCESS';
-export const ADOPT_CAT_ERROR = 'ADOPT_CAT_ERROR';
-
-
-const fetchCatRequest = () => ({
+export const fetchCatRequest = () => ({
     type: FETCH_CAT_REQUEST
 });
 
-const fetchCatSuccess = cat => ({
+export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
+export const fetchCatSuccess = cat => ({
     type: FETCH_CAT_SUCCESS,
     cat
 })
-
-const fetchCatError = err => ({
+export const FETCH_CAT_ERROR = 'FETCH_CAT_ERROR';
+export const fetchCatError = err => ({
     type: FETCH_CAT_ERROR,
     err
 });
-
-const adoptCatRequest = () => ({
+export const ADOPT_CAT_REQUEST = 'ADOPT_CAT_REQUEST';
+export const adoptCatRequest = () => ({
    type: ADOPT_CAT_REQUEST
 }); 
 
-const adoptCatSuccess = () => ({
+export const ADOPT_CAT_SUCCESS = 'ADOPT_CAT_SUCCESS';
+export const adoptCatSuccess = () => ({
     type: ADOPT_CAT_SUCCESS,
 });
 
-const adoptCatError = err => ({
+export const ADOPT_CAT_ERROR = 'ADOPT_CAT_ERROR';
+export const adoptCatError = err => ({
     type: ADOPT_CAT_ERROR,
     err
 });
