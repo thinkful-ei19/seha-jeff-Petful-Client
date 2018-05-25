@@ -24,7 +24,12 @@ export default function Pet (props) {
                     <dt>Story</dt>
                     <dd>{props.pet.story}</dd>
                 </dl>
-                <button className="adopt" onClick={props.onAdoptPet}> Adopt {props.pet.name}</button>
+                    <button className="adoptCat" onClick={() => props.dispatch(adoptCat(props.breed))}>
+                        Adopt {props.animal.name}
+                    </button>
+                    <button className="adoptDog" onClick={() => props.dispatch(adoptDog(props.breed))}>
+                        Adopt {props.animal.name}
+                    </button>
             </main>
             </section>
         </div>

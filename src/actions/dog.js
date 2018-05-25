@@ -1,37 +1,36 @@
 import {API_BASE_URL} from '../config';
+
+
+
 export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
-export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
-export const FETCH_DOG_ERROR = 'FETCH_DOG_ERROR';
-export const ADOPT_DOG_REQUEST = 'ADOPT_DOG_REQUEST';
-export const ADOPT_DOG_SUCCESS = 'ADOPT_DOG_SUCCESS';
-export const ADOPT_DOG_ERROR = 'ADOPT_DOG_ERROR';
-
-
-const fetchDogRequest = () => ({
-    type = FETCH_DOG_REQUEST 
+export const fetchDogRequest = () => ({
+    type : FETCH_DOG_REQUEST 
 })
 
-const fetchDogSuccess = dog => ({
-    type = FETCH_DOG_SUCCESS,
+export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
+export const fetchDogSuccess = dog => ({
+    type : FETCH_DOG_SUCCESS,
     dog
 })
-
-const fetchDogRequest = err => ({
-    type = FETCH_DOG_ERROR,
+export const FETCH_DOG_ERROR = 'FETCH_DOG_ERROR';
+export const fetchDogError = err => ({
+    type : FETCH_DOG_ERROR,
     err
 })
 
-
-const adoptDogRequest = () => ({
+export const ADOPT_DOG_REQUEST = 'ADOPT_DOG_REQUEST';
+export const adoptDogRequest = () => ({
     type: ADOPT_DOG_REQUEST
 })
 
-const adoptDogSuccess = () => ({
+export const ADOPT_DOG_SUCCESS = 'ADOPT_DOG_SUCCESS';
+export const adoptDogSuccess = () => ({
     type: ADOPT_DOG_SUCCESS
 })
 
-const adoptDogError = err =>({
-    type = ADOPT_DOG_ERROR,
+export const ADOPT_DOG_ERROR = 'ADOPT_DOG_ERROR';
+export const adoptDogError = err =>({
+    type : ADOPT_DOG_ERROR,
     err
 })
 
@@ -58,6 +57,6 @@ export const adoptDog = () => dispatch => {
         .then(() => {
             dispatch(fetchDog());
         })
-        .catch(err => dispatch(adopDogError(err)));
+        .catch(err => dispatch(adoptDogError(err)));
 }
 
