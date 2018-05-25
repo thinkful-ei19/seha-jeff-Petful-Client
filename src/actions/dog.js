@@ -51,11 +51,22 @@ export const fetchDog = () => dispatch => {
 
 export const adoptDog = () => dispatch => {
     dispatch(adoptDogRequest());
-    return fetch(`${API_BASE_URL}/cat`, { method: 'DELETE' })
-        .then(() => dispatch(adoptDogSuccess()))
-        .then(() => {
-            dispatch(fetchDog());
-        })
-        .catch(err => dispatch(adoptDogError(err)));
+    return fetch(`${API_BASE_URL}/dog`, { method: 'DELETE' })
+    .then(res =>{
+        if(!res.ok){
+            console.log("error adopting dog")
+            return Promise.reject(res.statusText)
+        }
+        return res.statusText
+    }).then(dog => {
+        dispatch(adoptDogSuccess())
+    })
+    .then(() => dispatch(fetchDog()))
+    .catch(err => dispatch(adoptDogError(err)))
+        // .then(() => dispatch(adoptDogSuccess()))
+        // .then(() => {
+        //     dispatch(fetchDog());
+        // })
+        // .catch(err => dispatch(adoptDogError(err)));
 }
 
