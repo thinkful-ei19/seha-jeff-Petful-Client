@@ -1,4 +1,7 @@
 import React from 'react';
+import{connect} from 'react-redux';
+import {adoptCat} from './../actions/cat';
+import { adoptDog } from './../actions/dog'
 
 
 export default function Pet (props) {
