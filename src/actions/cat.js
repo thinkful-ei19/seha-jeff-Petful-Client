@@ -51,9 +51,21 @@ export const fetchCat = () => dispatch => {
 export const adoptCat = () => dispatch => {
     dispatch(adoptCatRequest());
     return fetch(`${API_BASE_URL}/cat`, { method: 'DELETE' })
-        .then(() => dispatch(adoptCatSuccess()))
-        .then(() => {
-            dispatch(fetchCat());
-        })
-        .catch(err => dispatch(adoptCatError(err)));
+    .then(res =>{
+        if(!res.ok){
+            console.log("error adopting cat")
+            return Promise.reject(res.statusText)
+        }
+        return res.statusText
+    }).then(cat => {
+        console.log("adoptCatSuccess");
+        dispatch(adoptCatSuccess())
+    })
+    .then(() => dispatch(fetchCat()))
+    .catch(err => dispatch(adoptCatError(err)))
+        // .then(() => dispatch(adoptCatSuccess()))
+        // .then(() => {
+        //     dispatch(fetchCat());
+        // })
+        // .catch(err => dispatch(adoptCatError(err)));
 }
