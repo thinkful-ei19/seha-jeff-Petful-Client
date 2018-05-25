@@ -4,7 +4,7 @@ import {adoptCat} from './../actions/cat';
 import { adoptDog } from './../actions/dog'
 
 
-function Pet (props) {
+function Pet(props) {
    
     return (
         <div>
