@@ -35,11 +35,15 @@ export class Dashboard extends React.Component {
     }
     
     render() {
-        console.log(this.props)
+        
         return (
             <div>
-                <Pet {...this.props.cat} adoptPet={()=> this.props.dispatch(adoptCat())}/>
+            <div className="cats">
+                <Pet  {...this.props.cat} adoptPet={()=> this.props.dispatch(adoptCat())}/>
+                </div>
+                <div className="dogs">
                 <Pet {...this.props.dog} adoptPet={() => this.props.dispatch(adoptDog())} />
+            </div>
             </div>
         );
     }

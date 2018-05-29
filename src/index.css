@@ -1,5 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
+*{
+  margin:0;
+  overflow-x: hidden;
+  font-family: 'Oleo Script', cursive;
+  background: #efeef1;
+}
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+button{
+  font-size:2em;
+  height: auto;
+}
+.banner{
+  font-size:3em;
+  display: inline-block
+
+}
+.pets-display{
+  display: inline-block;
+  border: 2px solid lightsalmon;
+  font-size: 2em;
+}
+dt{
+  border: 2px solid beige;
+  background: lightcyan;
+}
+.petImage{
+  max-width:25%;
+  border: 3px solid #6504b5;
+}
+
+.noPets{
+  margin-bottom: 3em;
+  font-size: 3em;
+}
+.pet-banner-name{
+  font-size:2em;
+}
+.cats{
+  float: left;
+}
+.dogs{
+  float: right;
+ margin-top:-0.5em;
 }
